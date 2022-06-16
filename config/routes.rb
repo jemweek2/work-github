@@ -17,11 +17,6 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 scope module: :public do
 root to: 'homes#top'
-get 'homes/about'
-
-end
-
-
 
 
 namespace :admin do
