@@ -17,12 +17,14 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 scope module: :public do
 root to: 'homes#top'
-get 'homes/about'
+get '/homes/about' => 'homes#about'
+resources :products, only: [:index, :show]
 end
 
 namespace :admin do
-
-  end
+resources :products, only: [:index, :show, :new, :edit, :update, :create]
+resources :genres, only: [:index, :create, :edit, :update]
+end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
