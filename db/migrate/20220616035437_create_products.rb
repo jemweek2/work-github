@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.integer :no_tax_price, null: false
       t.boolean :is_active, null: false, default: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
