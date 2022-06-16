@@ -1,29 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-  end
-  namespace :public do
-    get 'carts/index'
-    get 'carts/update'
-    get 'carts/destroy'
-    get 'carts/create'
-  end
-  namespace :public do
-    get 'addresses/index'
-    get 'addresses/create'
-    get 'addresses/edit'
-    get 'addresses/update'
-    get 'addresses/destroy'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-    get 'customers/confirm'
-    get 'customers/withdraw'
+
   end
 # 顧客用
 # URL /customers/sign_in ...
