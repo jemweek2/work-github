@@ -19,13 +19,10 @@ scope module: :public do
 root to: 'homes#top'
 get 'homes/about'
 
-resources :orders,only: [:new,:index,:show,:create]do
-  collection do
-  post 'confirmation' => 'orders#confirmation', as: 'confirmation'
-  get 'thank' => 'orders#thank', as: 'thank'
-  end
-  end
 end
+
+
+
 
 namespace :admin do
 resources :orders, only: [:show, :index, :update]
