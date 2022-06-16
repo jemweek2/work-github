@@ -18,12 +18,20 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 scope module: :public do
 root to: 'homes#top'
 get 'homes/about'
+
+resources :orders,only: [:new,:index,:show,:create]do
+  collection do
+  post 'confirmation' => 'orders#confirmation', as: 'confirmation'
+  get 'thank' => 'orders#thank', as: 'thank'
+  end
+  end
 end
 
 namespace :admin do
+resources :orders, only: [:show, :index, :update]
 
-  end
-
+resources :order_details, only: [:update]
+end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
