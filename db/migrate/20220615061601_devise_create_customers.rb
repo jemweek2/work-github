@@ -49,7 +49,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
     # address	住所			string
       t.string :phone_number, null: false
     # phone_number	電話番号			string
-      t.boolean :is_deleted,  null: false, default: ""
+      t.boolean :is_deleted,  null: false, default: false
     # is_deleted	退会ステータス			boolean
 
 
