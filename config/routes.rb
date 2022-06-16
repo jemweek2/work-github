@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+
+  namespace :admin do
+    get 'orders/index'
+    get 'orders/show'
+  end
+  namespace :public do
+    get 'homes/top'
   end
 # 顧客用
 # URL /customers/sign_in ...
