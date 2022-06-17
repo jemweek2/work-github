@@ -39,6 +39,7 @@ end
 
 
 namespace :admin do
+root to: 'orders#index'
 resources :customers, only: [:index, :show, :update, :edit]
 resources :orders, only: [:show, :index, :update]
 resources :order_details, only: [:update]
