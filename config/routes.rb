@@ -35,7 +35,7 @@ get 'thank' => 'orders#thank', as: 'thank'
 end
 end
 resources :products, only: [:index, :show]
-end 
+end
 
 
 namespace :admin do
