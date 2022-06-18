@@ -30,10 +30,12 @@
 
         <div class="text-end">
           <% if customer_signed_in? %>
+              <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
               <button type="button" class="btn btn-outline-light me-2">ログアウト</button>
           <% elsif admin_signed_in? %>
               <button type="button" class="btn btn-outline-light me-2">ログアウト</button>
           <% else %>
+              <%= link_to "ログイン", new_customer_session_path %>
               <button type="button" class="btn btn-outline-light me-2">ログイン</button>
               <button type="button" class="btn btn-warning">新規登録</button>
           <% end %>
