@@ -11,6 +11,14 @@
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
+   <div class="field">
+    <%= f.label :"フリガナ" %>
+    <%= f.label :"(セイ)" %>
+    <%= f.text_field :family_name_kana, autofocus: true %>
+    <%= f.label :"(メイ)" %>
+    <%= f.text_field :first_name_kana, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
