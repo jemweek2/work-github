@@ -11,9 +11,12 @@
 <p><%= @product.genre.name %></p>
 
 <h4>税込価格</h4>
-no_tax_price
+<p><%= @product.add_no_tax_price.to_s(:delimited) %> (<%= @product.no_tax_price.to_s(:delimited) %>) 円</p>
+
 <h4>販売ステータス</h4>
-is_active
+<% unless @product.is_active %><p>販売停止中</p>
+<% else %><P>販売中</P>
+<% end %>
 
 <div>
   <%= link_to '編集する', edit_admin_product_path(@product), class: "btn btn-sm btn-success" %>
