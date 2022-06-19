@@ -21,8 +21,9 @@ get "/about" => "homes#about", as: 'about'
 
 get "customers" => "customers#show"
 get "customers/confirm" => "customers#confirm", as: 'confirm'
+get "customers/mypage/edit" => "customers#edit"
 patch "customers/withdraw" => "customers#withdraw"
-resources :customers, only: [:edit, :update]
+patch "customers/update" => "customers#update"
 
 resources :addresses, only: [:index, :create, :edit, :destroy, :update]
 
