@@ -19,7 +19,7 @@ scope module: :public do
 root to: 'homes#top'
 get "/about" => "homes#about", as: 'about'
 
-get "customers/show" => "customers#show"
+get "customers" => "customers#show"
 get "customers/confirm" => "customers#confirm", as: 'confirm'
 patch "customers/withdraw" => "customers#withdraw"
 resources :customers, only: [:edit, :update]
