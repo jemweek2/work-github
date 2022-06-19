@@ -1,2 +1,12 @@
-<h1>Public::Products#show</h1>
-<p>Find me in app/views/public/products/show.html.erb</p>
+<div id="img_field">
+  <%= image_tag @product.product_image, size: "200x200" %>
+</div>
+
+<div>
+<p>
+<%= @product.name %><br>
+<%= @product.description %>
+</P>
+</div>
+
+<p>￥<%= @product.add_no_tax_price.to_s(:delimited) %>(税込)</p>

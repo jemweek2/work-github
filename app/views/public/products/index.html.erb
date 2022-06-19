@@ -1,27 +1,3 @@
 <h2>商品一覧</h2>
 
-<table width="80%", align="center",border="1" cellpadding="6" cellspacing="0">
-  <thead style="background:skyblue">
-    <tr>
-      <th>商品ID</th>
-      <th>商品名</th>
-      <th>税抜価格</th>
-      <th>ジャンル</th>
-      <th>ステータス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @product.each do |product| %>
-    <tr>
-      <td><%= product.id %></td>
-      <td><%= link_to product.name, admin_product_path(product) %></td>
-      <td><%= product.no_tax_price.to_s(:delimited) %></td>
-      <td><%= product.genre.name %></td>
-      <td><% unless product.is_active %>販売停止中
-          <% else %>販売中
-          <% end %></td>
-    </tr>
-    <% end %>
-  </tbody>
-  <%= paginate @product %>
-</table>
+<%= render "index", product: @product %>

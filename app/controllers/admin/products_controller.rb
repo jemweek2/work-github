@@ -28,7 +28,7 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_product_path(product.id)
   end
 
-
+  private
   def product_params
     params.require(:product).permit(:name, :description, :product_image, :genre_id, :no_tax_price, :is_active)
   end
