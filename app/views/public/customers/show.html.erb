@@ -20,7 +20,7 @@
       <div class="col-sm-3">
       <h6 class="mb-0">Full Name</h6>
       </div>
-      <div class="col-sm-9 text-secondary"> 苗字: <%= @customer.family_name %>氏名: <%= @customer.first_name %>
+      <div class="col-sm-9 text-secondary"> <%= @customer.family_name %><%= @customer.first_name %>
       </div>
     </div>
     <hr>
@@ -28,7 +28,7 @@
       <div class="col-sm-3">
       <h6 class="mb-0">カナ</h6>
       </div>
-      <div class="col-sm-9 text-secondary"> カナ苗字: <%= @customer.family_name_kana %>カナ氏名: <%= @customer.first_name_kana %>
+      <div class="col-sm-9 text-secondary"> <%= @customer.family_name_kana %> <%= @customer.first_name_kana %>
       </div>
     </div>
     <hr>
@@ -36,7 +36,7 @@
       <div class="col-sm-3">
       <h6 class="mb-0">郵便番号</h6>
       </div>
-      <div class="col-sm-9 text-secondary"> 郵便番号: <%= @customer.postal_code %>
+      <div class="col-sm-9 text-secondary"> <%= @customer.postal_code %>
       </div>
     </div>
     <hr>
@@ -44,7 +44,7 @@
       <div class="col-sm-3">
       <h6 class="mb-0">住所</h6>
       </div>
-      <div class="col-sm-9 text-secondary"> 住所: <%= @customer.address %>
+      <div class="col-sm-9 text-secondary">  <%= @customer.address %>
       </div>
     </div>
     <hr>
@@ -52,14 +52,14 @@
       <div class="col-sm-3">
       <h6 class="mb-0">電話番号</h6>
       </div>
-      <div class="col-sm-9 text-secondary"> 電話番号: <%= @customer.phone_number %></div>
+      <div class="col-sm-9 text-secondary"> <%= @customer.phone_number %></div>
     </div>
     <hr>
     <div class="row">
       <div class="col-sm-3">
       <h6 class="mb-0">Email</h6>
       </div>
-      <div class="col-sm-9 text-secondary"> メールアドレス <%= @customer.email %>
+      <div class="col-sm-9 text-secondary">  <%= @customer.email %>
       </div>
     </div>
     <hr>
