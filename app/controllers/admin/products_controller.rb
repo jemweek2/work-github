@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+
   def index
   end
 
@@ -11,6 +12,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def create
@@ -24,7 +26,7 @@ class Admin::ProductsController < ApplicationController
 
 
   def product_params
-    params.require(:product).permit(:name, :description)
+    params.require(:product).permit(:name, :description, :product_image, :genre_id, :no_tax_price, :is_active)
   end
 
 end

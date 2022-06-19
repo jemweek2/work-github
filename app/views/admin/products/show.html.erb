@@ -1,5 +1,21 @@
+<div id="img_field">
+  <%= image_tag @product.product_image, size: "200x200" %>
+</div>
 <h4>商品名</h4>
 <p><%= @product.name %></p>
 
 <h4>商品説明</h4>
 <p><%= @product.description %></p>
+
+<h4>ジャンル</h4>
+<p><%= @product.genre.name %></p>
+
+<h4>税込価格</h4>
+no_tax_price
+<h4>販売ステータス</h4>
+is_active
+
+<div>
+  <%= link_to '編集する', edit_admin_product_path(@product), class: "btn btn-sm btn-success" %>
+</div>
+
