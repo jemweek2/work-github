@@ -16,12 +16,20 @@ class Public::AddressesController < ApplicationController
   end
 
   def edit
+    @shipping_adress = ShippingAdress.find(params[:id])
+
   end
 
   def update
+    @shipping_adress = ShippingAdress.find(params[:id])
+    @shipping_adress.update(shipping_adress_params)
+    redirect_to addresses_path
   end
 
   def destroy
+    @shipping_adress = ShippingAdress.find(params[:id])
+    @shipping_adress.destroy
+    redirect_to  addresses_path
   end
 
   def shipping_adress_params
