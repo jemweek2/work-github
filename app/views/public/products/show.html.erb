@@ -10,3 +10,11 @@
 </div>
 
 <p>￥<%= @product.add_no_tax_price.to_s(:delimited) %>(税込)</p>
+
+<div>
+  <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
+  <%= f.hidden_field :product_id, :value => @product.id %>
+  <%= f.select :quantity,  *[1..10], include_blank: "個数選択" %>
+  <%= f.submit "カートに入れる", class: "btn btn-success" %>
+  <% end %>
+</div>
