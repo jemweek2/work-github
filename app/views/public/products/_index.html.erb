@@ -1,18 +1,20 @@
 <div class="row">
 <% product.each do |product| %>
   <div class="col">
-<!--<table width="80%", align="center", border="4", cellpadding="6" cellspacing="0">-->
-<table class="table table-borderless">
-  <tr>
-    <th><%= image_tag product.product_image, size: "200x200" %></th>
-  </tr>
-  <tr>
-    <th><%= product.name %></th>
-  </tr>
-  <tr>
-    <th>￥<%= product.add_no_tax_price.to_s(:delimited) %></th>
-  </tr>
-</table>
-</div>
+    <%= link_to(product_path(product.id)) do %><!--<table width="80%", align="center", border="4", cellpadding="6" cellspacing="0">-->
+    <table class="table table-borderless">
+      <tr>
+        <th><%= image_tag product.product_image, size: "200x200" %></th>
+      </tr>
+      <tr>
+        <th><%= product.name %></th>
+      </tr>
+      <tr>
+        <th>￥<%= product.add_no_tax_price.to_s(:delimited) %></th>
+      </tr>
+    </table>
+    <% end %>
+　</div>
 <% end %>
+
 </div>

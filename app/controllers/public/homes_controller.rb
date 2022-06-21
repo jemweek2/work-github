@@ -1,9 +1,11 @@
 class Public::HomesController < ApplicationController
 
-  
+
   def top
-  end 
-  
+    @genres =Genre.all
+    @products = Product.order(created_at: :desc).limit(4)
+  end
+
   def about
   end
 end

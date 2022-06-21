@@ -1,20 +1,26 @@
-<div id="img_field">
-  <%= image_tag @product.product_image, size: "200x200" %>
-</div>
+  <div class="container-fluid" >
+    <div class="row mt-4 mx-2">
+      <%= render 'layouts/genrebar' %>
+      <div class="col-md-9">
+         <div class="row">
+            <div class="col-md-4" id="img_field">
+                <%= image_tag @product.product_image, size: "300x300" %>
+            </div>
 
-<div>
-<p>
-<%= @product.name %><br>
-<%= @product.description %>
-</P>
-</div>
+                <div class="col-md-8">
+                <h3><%= @product.name %></h3>
+                <br>
+                <p><%= @product.description %></P>
+                <br>
+                <p>￥<%= @product.add_no_tax_price.to_s(:delimited) %>(税込)</p>
 
-<p>￥<%= @product.add_no_tax_price.to_s(:delimited) %>(税込)</p>
-
-<div>
-  <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
-  <%= f.hidden_field :product_id, :value => @product.id %>
-  <%= f.select :quantity,  *[1..10], include_blank: "個数選択" %>
-  <%= f.submit "カートに入れる", class: "btn btn-success" %>
-  <% end %>
+                <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
+                <%= f.hidden_field :product_id, :value => @product.id %>
+                <%= f.select :quantity,  *[1..10], include_blank: "個数選択" %>
+                <%= f.submit "カートに入れる", class: "btn btn-success" %>
+                <% end %>
+                </div>
+      </div>
+    </div>
+  </div>
 </div>
