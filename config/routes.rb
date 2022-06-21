@@ -27,7 +27,11 @@ patch "customers/update" => "customers#update"
 
 resources :addresses, only: [:index, :create, :edit, :destroy, :update]
 
-resources :carts, only: [:index, :update, :destroy, :create]
+resources :cart_items, only: [:index, :update, :destroy, :create]do
+  collection do
+    delete :destroy_all
+  end
+end
 
 resources :orders,only: [:new,:index,:show,:create]do
 collection do
