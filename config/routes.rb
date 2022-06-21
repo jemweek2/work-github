@@ -40,7 +40,9 @@ end
 
 
 namespace :admin do
-root to: 'orders#index'
+devise_scope :admin do
+    root "sessions#new"
+end
 resources :customers, only: [:index, :show, :update, :edit]
 resources :orders, only: [:show, :index, :update]
 resources :order_details, only: [:update]
