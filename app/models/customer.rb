@@ -8,7 +8,7 @@ class Customer < ApplicationRecord
   has_many :cart_items, dependent: :destroy
 
 
-  has_many :product, dependent: :destroy
+  has_many :products, dependent: :destroy
   has_many :orders, dependent: :destroy
 
 
