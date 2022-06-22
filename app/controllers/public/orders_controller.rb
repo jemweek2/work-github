@@ -9,6 +9,7 @@ class Public::OrdersController < ApplicationController
     @order.cutomer_id = current_customer.id
     @order.save
     redirect_to confirmation_path
+
   end
 
 def confirmation
