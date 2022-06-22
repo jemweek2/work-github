@@ -32,14 +32,10 @@ def confirmation
 
 
   elsif params[:order][:address_no] == "3"
+    
+    @shipping_address = ShippingAdress.find(params[:order][:address_id])
 
-     @shipping_address = ShippingAdress.find(params[:order][:address_id]])
-    address_new = current_customer.shipping_address.new(address_params)
-    if address_new
-    else
-      render :new
-
-    end
+   
   else
     redirect_to 遷移したいページ
   end
