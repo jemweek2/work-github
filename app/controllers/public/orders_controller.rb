@@ -27,8 +27,9 @@ def confirmation
 # view で定義している address_number が"2"だったときにこの処理を実行します
     if ShippingAdress.exists?(recipient_name: params[:order][:registered])
 # registered は viwe で定義しています
-      @order.name = Address.find(params[:order][:registered]).recipient_name
-      @order.address = Address.find(params[:order][:registered]).address
+     @order.shipping_name = ShippingAdress.find(params[:order][:registered]).recipient_name
+     @order.shipping_address = ShippingAdress.find(params[:order][:registered]).address
+     @order.postal_code = ShippingAdress.find(params[:order][:registered]).postal_code
     else
       render :new
 # 既存のデータを使っていますのでありえないですが、万が一データが足りない場合は new を render します
