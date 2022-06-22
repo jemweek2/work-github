@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   def new
+    @Order = Order.new
   end
 
   def confirmation
