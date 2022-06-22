@@ -33,7 +33,7 @@ resources :cart_items, only: [:index, :update, :destroy, :create]do
   end
 end
 
-get 'confirmation' => 'orders#confirmation', as: 'confirmation'
+
 resources :orders,only: [:new,:index,:show,:create]do
 collection do
 post 'confirmation' => 'orders#confirmation', as: 'confirmation'
