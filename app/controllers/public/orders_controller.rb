@@ -15,6 +15,7 @@ class Public::OrdersController < ApplicationController
 def confirmation
   @order = Order.new(order_params)
 
+
   if params[:order][:address_no] == "1"
 
     @order.shipping_name = current_customer.family_name+current_customer.first_name
@@ -33,10 +34,11 @@ def confirmation
 
   elsif params[:order][:address_no] == "3"
 
-    @shipping_address = ShippingAdress.find(params[:order][:address_id])
   else
     redirect_to 遷移したいページ
   end
+
+
   @cart_items = current_customer.cart_items.all
   @total = @cart_items.inject(0) { |sum, item| sum + item.sum_price }
 end
