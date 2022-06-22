@@ -27,7 +27,9 @@ class Public::CartItemsController < ApplicationController
     if @cart_item.save
     redirect_to cart_items_path
     else
+
     redirect_to product_path(@cart_item.product_id)
+
     end
   end
 
