@@ -8,8 +8,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.cutomer_id = current_customer.id
     @order.save
-    redirect_to confirmation_path
-
+    redirect_to thank_orders
   end
 
 def confirmation
@@ -39,7 +38,7 @@ def confirmation
   end
 
 
-  @cart_items = current_customer.cart_items.all
+  @cart_item = current_customer.cart_items.all
   @total = 0
 end
 
