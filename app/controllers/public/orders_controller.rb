@@ -35,12 +35,12 @@ def confirmation
   elsif params[:order][:address_no] == "3"
 
   else
-    redirect_to 遷移したいページ
+    redirect_to new_order_path
   end
 
 
   @cart_items = current_customer.cart_items.all
-  @total = @cart_items.inject(0) { |sum, item| sum + item.sum_price }
+  @total = 0
 end
 
   def thank
