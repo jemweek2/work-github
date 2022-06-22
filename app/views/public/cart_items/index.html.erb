@@ -1,11 +1,11 @@
-   <div class="container-fruid">
+   <div class="container">
     <div class="row  mt-4 mx-4">
-      <div class="col">
+      <div class="col-md-3 mt-2 text-center">
         <div class="bg-secondary">
         <h4>ショッピングカート</h4>
         </div>
       </div>
-      <div cclass="col">
+      <div class="col text-right">
         <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
       </div>
     </div>
