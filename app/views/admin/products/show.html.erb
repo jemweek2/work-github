@@ -1,0 +1,24 @@
+<div id="img_field">
+  <%= image_tag @product.product_image, size: "200x200" %>
+</div>
+<h4>商品名</h4>
+<p><%= @product.name %></p>
+
+<h4>商品説明</h4>
+<p><%= @product.description %></p>
+
+<h4>ジャンル</h4>
+<p><%= @product.genre.name %></p>
+
+<h4>税込価格</h4>
+<p><%= @product.add_no_tax_price.to_s(:delimited) %> (<%= @product.no_tax_price.to_s(:delimited) %>) 円</p>
+
+<h4>販売ステータス</h4>
+<% unless @product.is_active %><p>販売停止中</p>
+<% else %><P>販売中</P>
+<% end %>
+
+<div>
+  <%= link_to '編集する', edit_admin_product_path(@product), class: "btn btn-sm btn-success" %>
+</div>
+

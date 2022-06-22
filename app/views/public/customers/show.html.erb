@@ -1,0 +1,89 @@
+<div class="container">
+    <br>
+    <br>
+      <div class="row">
+      <div class="col-sm-3">
+        <h1>マイページ</h1>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+      <%= link_to '編集する', customers_mypage_edit_path, class: "btn btn-success" %>
+      </div>
+    </div>
+    <br>
+    <br>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-3">
+      <h6 class="mb-0">Full Name</h6>
+      </div>
+      <div class="col-sm-9 text-secondary"> <%= @customer.family_name %><%= @customer.first_name %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+      <h6 class="mb-0">カナ</h6>
+      </div>
+      <div class="col-sm-9 text-secondary"> <%= @customer.family_name_kana %> <%= @customer.first_name_kana %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+      <h6 class="mb-0">郵便番号</h6>
+      </div>
+      <div class="col-sm-9 text-secondary"> <%= @customer.postal_code %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+      <h6 class="mb-0">住所</h6>
+      </div>
+      <div class="col-sm-9 text-secondary">  <%= @customer.address %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+      <h6 class="mb-0">電話番号</h6>
+      </div>
+      <div class="col-sm-9 text-secondary"> <%= @customer.phone_number %></div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+      <h6 class="mb-0">Email</h6>
+      </div>
+      <div class="col-sm-9 text-secondary">  <%= @customer.email %>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+      <h3>配送先 &nbsp; &nbsp; &nbsp; &nbsp;<%= link_to '一覧', addresses_path, class: "btn btn-primary" %>
+      </h3>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-3">
+      <h3>注文履歴 &nbsp; <%= link_to '一覧', orders_path, class: "btn btn-primary" %>
+      </h3>
+      </div>
+    </div>
+
+
+    <br>
+    <br>
+</div>
