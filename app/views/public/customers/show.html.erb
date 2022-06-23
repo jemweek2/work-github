@@ -3,22 +3,22 @@
     <br>
       <div class="row">
       <div class="col-sm-3">
-        <h1>マイページ</h1>
+        <h5><b><span style="background-color:gainsboro">マイページ</span></b></h5>
       </div>
     </div>
     <br>
     <br>
     <div class="row">
       <div class="col-sm-3">
-      <%= link_to '編集する', customers_mypage_edit_path, class: "btn btn-success" %>
+      <h5><b>登録情報</b>&nbsp; &nbsp; &nbsp; &nbsp;<%= link_to '編集する', customers_mypage_edit_path, class: "btn btn-success" %></h5>
       </div>
     </div>
     <br>
     <br>
-  <div class="card-body">
+  <div class="card-body" style="width: 40rem;">
     <div class="row">
       <div class="col-sm-3">
-      <h6 class="mb-0">Full Name</h6>
+      <h6 class="mb-0">氏名</h6>
       </div>
       <div class="col-sm-9 text-secondary"> <%= @customer.family_name %><%= @customer.first_name %>
       </div>
@@ -57,7 +57,7 @@
     <hr>
     <div class="row">
       <div class="col-sm-3">
-      <h6 class="mb-0">Email</h6>
+      <h6 class="mb-0">メールアドレス</h6>
       </div>
       <div class="col-sm-9 text-secondary">  <%= @customer.email %>
       </div>
@@ -69,8 +69,8 @@
     <br>
     <div class="row">
       <div class="col-sm-3">
-      <h3>配送先 &nbsp; &nbsp; &nbsp; &nbsp;<%= link_to '一覧', addresses_path, class: "btn btn-primary" %>
-      </h3>
+      <h5><b>配送先</b> &nbsp; &nbsp; &nbsp; &nbsp;<%= link_to '一覧をみる', addresses_path, class: "btn btn-primary" %>
+      </h5>
       </div>
     </div>
     <br>
@@ -78,8 +78,8 @@
 
     <div class="row">
       <div class="col-sm-3">
-      <h3>注文履歴 &nbsp; <%= link_to '一覧', orders_path, class: "btn btn-primary" %>
-      </h3>
+      <h5><b>注文履歴</b> &nbsp; <%= link_to '一覧をみる', orders_path, class: "btn btn-primary" %>
+      </h5>
       </div>
     </div>
 
