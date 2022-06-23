@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row mt-4 ml-4">
-    <div class="col-md-3 text-center">
+
     <h3 class="bg-secondary">注文履歴一覧</h3>
-    </div>
+
   </div>
-  <div class="row mt-2 mx-5">
-    <table width="80%" class="table">
-      <thead>
+  <div class="row mt-2 mx-3">
+    <div class="col">
+    <table class="table">
+      <thead class="thead-light">
         <tr>
           <th>購入日時</th>
           <th>購入者</th>
@@ -32,6 +33,7 @@
         <% end %>
       </tbody>
     </table>
+    </div>
   </div>
   <div class="row">
     <%= paginate(@orders) %>
