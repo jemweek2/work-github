@@ -104,10 +104,9 @@ ActiveRecord::Schema.define(version: 2022_06_18_095427) do
     t.integer "total_price", null: false
     t.integer "payment_method", default: 0, null: false
     t.integer "order_status", default: 0, null: false
-    t.integer "cutomer_id", null: false
+    t.integer "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    
   end
 
   create_table "products", force: :cascade do |t|
