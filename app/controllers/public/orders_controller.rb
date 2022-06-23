@@ -1,14 +1,22 @@
 class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
-
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.cutomer_id = current_customer.id
+    cart_items = current_customer.cart_items.all
+    @order = current_customer.orders.new(order_params)
     @order.save
-    redirect_to thank_orders
+      cart_items.each do |cart|
+        order_detail = OrderDetail.new
+        order_detail.product_id = cart.product_id
+        order_detail.order_id = @order.id
+        order_detail.quantity = cart.quantity
+        order_detail.price = cart.product.add_no_tax_price
+        order_detail.save
+      end
+      redirect_to thank_orders_path
+      cart_items.destroy_all
   end
 
 def confirmation
@@ -50,6 +58,7 @@ end
 
   def show
   end
+
 private
 
   def order_params
