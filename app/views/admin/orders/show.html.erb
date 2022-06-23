@@ -38,12 +38,18 @@
         </thead>
 
         <tbody>
+
+
           <% @order.order_details.each do |order_detail| %>
           <tr>
             <td><%= order_detail.product.name%></td>
             <td><%= order_detail.product.add_no_tax_price.to_s(:delimited) %></td>
             <td><%= order_detail.quantity %></td>
             <td><%= order_detail.subtotal.to_s(:delimited) %></td>
+            <%= form_with model:@order_details, url:admin_order_path, method: :patch, local:true do |f| %>
+            <td><%= f.select :production_status, OrderDetail.production_statuses.keys.map {|k| [I18n.t("enums.order.order_detail.#{k}"), k]} %></td>
+          <% end %>
           </tr>
+          
           <% end %>
         </tbody>
