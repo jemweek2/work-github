@@ -24,7 +24,9 @@
             <%= order.customer.first_name %>
           </th>
           <th>
-            <%= order.order_details.quantity %>
+            <% order.order_details.each do |order_detail| %>
+            <%= order_detail.quantity %>
+            <% end %>
           </th>
           <th>
             <%= order.order_status %>
