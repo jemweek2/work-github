@@ -54,6 +54,7 @@ end
   end
 
   def index
+    @order = Order.page(params[:page]).per(8)
   end
 
   def show
