@@ -43,11 +43,7 @@
             <td><%= order_detail.product.name%></td>
             <td><%= order_detail.product.add_no_tax_price.to_s(:delimited) %></td>
             <td><%= order_detail.quantity %></td>
-            <td><%= f.select :order_status, Order.order_statuses.keys.map {|k| [I18n.t("enums.order.order_status.#{k}"), k]} %></td>
-            <td><%= link_to '編集する', edit_address_path(shipping_adress.id), class: "btn btn-success" %>
-            <%= link_to '削除する', address_path(shipping_adress.id), method: :delete, class: "btn btn-danger" %>
-            </td>
-
+            <td><%= order_detail.subtotal.to_s(:delimited) %></td>
           </tr>
           <% end %>
         </tbody>
