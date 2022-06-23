@@ -13,7 +13,7 @@ class Order < ApplicationRecord
   def postage
     postage = 800
   end
-  
-  
-  
+
+
+
 end
