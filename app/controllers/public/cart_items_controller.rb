@@ -1,4 +1,5 @@
 class Public::CartItemsController < ApplicationController
+  
   def index
     @cart_item = CartItem.all
     @total = 0
@@ -23,14 +24,18 @@ class Public::CartItemsController < ApplicationController
   end
 
   def create
-    @cart_item = current_customer.cart_items.new(cart_item_params)
-    if @cart_item.save
-    redirect_to cart_items_path
+    unless customer_signed_in?
+      redirect_to products_path
     else
-
-    redirect_to product_path(@cart_item.product_id)
-
-    end
+        @cart_item = current_customer.cart_items.new(cart_item_params)
+        if @cart_item.save
+        redirect_to cart_items_path
+        else
+    
+        redirect_to product_path(@cart_item.product_id)
+    
+        end
+    end 
   end
 
 
@@ -38,4 +43,5 @@ class Public::CartItemsController < ApplicationController
   def cart_item_params
       params.require(:cart_item).permit(:product_id, :quantity)
   end
+  
 end
