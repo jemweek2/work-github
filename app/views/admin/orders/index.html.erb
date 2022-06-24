@@ -32,14 +32,17 @@
             <% @total = @total + order_detail.quantity %>
             <% end %>
             <%= @total %>
+            <% @total = 0 %>
           </th>
           <th>
             <%= order.order_status_i18n %>
           </th>
         </tr>
+
         <% end %>
       </tbody>
     </table>
+
     </div>
   </div>
   <div class="row">
