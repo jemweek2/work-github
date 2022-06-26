@@ -1,13 +1,10 @@
-# name
-ECサイト:ながのCAKE
-![](images/assets/Logo.png)
+# ECサイト:ながのCAKE
 
-## Overview
- ◆概要  長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。
+![チームジム週2](https://user-images.githubusercontent.com/104051986/175799024-7dbb4b1c-c189-4512-940d-4c03be18b164.jpg)
+## ◆概要
+   長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。
 
-## Requirement
-
-使用技術
+## ◆使用技術
 
 バックエンド
 ・Rails 6.1.6
@@ -19,24 +16,21 @@ ECサイト:ながのCAKE
 ・bootstrap4
 
 
-## Features
-◆案件の背景 元々近隣住民が顧客だったが、昨年始めたInstagramから人気となり、
- 全国から注文が来るよう になった。 InstagramのDMやメールで通販の注文を受けていたが、
- 情報管理が煩雑になってきたため、管理機能を含んだ通販サイトを開設しようと思い至った。
+## ◆案件の背景
+元々近隣住民が顧客だったが、昨年始めたInstagramから人気となり、
+全国から注文が来るよう になった。 InstagramのDMやメールで通販の注文を受けていたが、
+情報管理が煩雑になってきたため、管理機能を含んだ通販サイトを開設しようと思い至った。
 ## Reference
 
-## Author
-
-[twitter](https://twitter.com/Kotabrog)
-
-## Licence
-
-[MIT](https://......)
+## 担当者
+柴大一
+上東亮祐
+小林龍生
 
 
 
+## 主な機能
 
-主な機能
 
 顧客側
 会員登録機能(Device使用)
