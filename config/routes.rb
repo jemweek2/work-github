@@ -55,5 +55,6 @@ resources :products, only: [:index, :show, :new, :edit, :update, :create]
 resources :genres, only: [:index, :create, :edit, :update]
 end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+get "search" => "searches#search"
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
