@@ -1,0 +1,73 @@
+
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <!--<a class="navbar-brand" href="/"></a>-->
+
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start center-block">
+
+        <a href="/"><img src="/assets/ue.png" alt=""></a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <% if customer_signed_in? %>
+              <li><a href="/customers" class="nav-link px-2 text-white">マイページ</a></li>
+              <li><a href="/products" class="nav-link px-2 text-white">商品一覧</a></li>
+              <li><a href="/cart_items" class="nav-link px-2 text-white">カート</a></li>
+          <% elsif admin_signed_in? %>
+              <li><a href="/admin/products" class="nav-link px-2 text-white">商品一覧</a></li>
+              <li><a href="/admin/customers" class="nav-link px-2 text-white">会員一覧</a></li>
+              <li><a href="/admin/orders" class="nav-link px-2 text-white">注文履歴一覧</a></li>
+              <li><a href="/admin/genres" class="nav-link px-2 text-white">ジャンル一覧</a></li>
+          <% else %>
+              <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
+              <li><a href="/products" class="nav-link px-2 text-white">商品一覧</a></li>
+
+          <% end %>
+        <%= form_with url: search_path, local: true, method: :get do |f| %>
+          <div class="form-inline">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <%= f.text_field :word, class: "form-control form-control-dark text-white bg-dark" %>
+              <%= f.select :search, options_for_select([["部分一致","partial_match"]]), class: "form-select"  %>
+              <%= f.submit "検索", class: "btn btn-outline-light me-2" %>
+            </form>
+          <div class="form-inline">
+        <% end %>
+        </ul>
+
+
+
+        <div class="text-end">
+          <% if customer_signed_in? %>
+              <%= link_to(destroy_customer_session_path,method: :delete) do %>
+              <button type="button" class="btn btn-outline-light me-2">ログアウト</button>
+              <% end %>
+          <% elsif admin_signed_in? %>
+              <%= link_to(destroy_admin_session_path,method: :delete) do %>
+              <button type="button" class="btn btn-outline-light me-2">ログアウト</button>
+              <% end %>
+          <% else %>
+              <% if current_page?(admin_root_path) || current_page?(new_admin_session_path) %>
+              <%= link_to(new_admin_session_path) do %>
+              <button type="button" class="btn btn-outline-light me-2">ログイン</button>
+              <% end %>
+              <% else %>
+              <%= link_to(new_customer_session_path) do %>
+              <button type="button" class="btn btn-outline-light me-2">ログイン</button>
+              <% end %>
+              <% end %>
+
+              <%= link_to(new_customer_registration_path) do %>
+              <button type="button" class="btn btn-warning">新規登録</button>
+              <% end %>
+          <% end %>
+        </div>
+
+        <% if customer_signed_in? %>
+        <div class="col">
+        ようこそ、<%= current_customer.family_name + current_customer.first_name %>さん！
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </header>
+

@@ -1,2 +1,49 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+
+<main>
+ 
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <br><br>
+         <h5><span style="background-color:gainsboro">会員情報編集</span></h5>
+        <br><br>
+
+  <%= form_with model:@customer, url:customers_update_path do |f| %>
+    <table>
+      <tbody>
+        <tr>
+            <th><label for="inputName">氏名</label></th>
+            <td><%= f.text_field :family_name, autofocus: true, id:"inputName"%></td>
+            <td><%= f.text_field :first_name, autofocus: true, id:"inputName"%></td>
+        </tr>
+         <tr>
+            <th><label for="inputName">フリガナ&nbsp;&nbsp;&nbsp;&nbsp;</label></th>
+            <td><%= f.text_field :family_name_kana, autofocus: true, id:"inputName"%></td>
+            <td><%= f.text_field :first_name_kana, autofocus: true, id:"inputName"%></td>
+        </tr>
+         <tr>
+            <th> <label for="inputName">郵便番号</label></th>
+            <td><%= f.text_field :postal_code, autofocus: true, id:"inputName"%></td>
+        </tr>
+        <tr>
+            <th><label for="inputName">住所</label></th>
+            <td><%= f.text_field :address, autofocus: true, id:"inputName"%></td>
+        </tr>
+        <tr>
+            <th><label for="inputName">電話番号</label></th>
+            <td><%= f.text_field :phone_number, autofocus: true, id:"inputName"%></td>
+        </tr>
+        <tr>
+            <th><label for="inputName">メールアドレス</label></th>
+            <td><%= f.text_field :email, autofocus: true, id:"inputName"%></td>
+        </tr>
+        <tr>
+          <th><%= f.submit "編集内容を保存", class: "btn btn-primary"%></th>
+        </tr>
+        <tr>
+          <th><%= link_to '退会する', confirm_path, class: "btn btn-danger" %></th>
+        </tr>
+  <% end %>
+        </div>
+      </tbody>
+    </table>
+</main>
+<br><br>

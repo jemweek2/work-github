@@ -1,0 +1,33 @@
+
+<div class="container-fluid" >
+  
+  <div class="row mt-4 mx-2">
+    
+    <%= render 'layouts/genrebar' %>
+    <div class="col-md-9">
+      　<h4><b>検索結果</b></h4>
+        <h5><b><span style="background-color:gainsboro">商品一覧(全<%= @products.count %>件)</span></b></h5>
+          <div class="row">
+          <% @products.each do |product| %>
+            <div class="col">
+              <%= link_to(product_path(product.id)) do %><!--<table width="80%", align="center", border="4", cellpadding="6" cellspacing="0">-->
+              <table class="table table-borderless">
+                <tr>
+                  <th><%= image_tag product.product_image, size: "200x200" %></th>
+                </tr>
+                <tr>
+                  <th><%= product.name %></th>
+                </tr>
+                <tr>
+                  <th>￥<%= product.add_no_tax_price.to_s(:delimited) %></th>
+                </tr>
+              </table>
+              <% end %>
+          　</div>
+          <% end %>
+          </div>
+        <div class="row justify-content-center">
+        </div>
+    </div>
+  </div>
+ </div>
